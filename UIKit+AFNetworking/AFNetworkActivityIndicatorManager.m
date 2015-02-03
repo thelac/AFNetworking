@@ -113,9 +113,11 @@ static NSURLRequest * AFNetworkRequestFromNotification(NSNotification *notificat
     return self.activityCount > 0;
 }
 
+#ifndef AF_APP_EXTENSION
 - (void)updateNetworkActivityIndicatorVisibility {
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:[self isNetworkActivityIndicatorVisible]];
 }
+#endif
 
 - (void)setActivityCount:(NSInteger)activityCount {
 	@synchronized(self) {
